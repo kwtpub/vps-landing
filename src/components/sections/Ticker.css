@@ -1,0 +1,37 @@
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 12px 0;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 44px;
+  white-space: nowrap;
+  animation: tick 50s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+}
+
+.ticker-track b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.ticker-track em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+@keyframes tick {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,74 @@
+.feats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.feat-cell {
+  padding: 34px 28px;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+
+.feat-cell:last-child {
+  border-right: 0;
+}
+
+.feat-cell .idx {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-4);
+  letter-spacing: 0.16em;
+  position: absolute;
+  right: 24px;
+  top: 26px;
+}
+
+.feat-cell .fico {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+.feat-cell .fico svg {
+  width: 18px;
+  height: 18px;
+}
+
+.feat-cell h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  margin: 18px 0 10px;
+}
+
+.feat-cell h3 em {
+  font-style: italic;
+  color: var(--ink-3);
+  font-weight: 300;
+}
+
+.feat-cell p {
+  color: var(--ink-3);
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 34ch;
+}
+
+@media (max-width: 1000px) {
+  .feats {
+    grid-template-columns: 1fr;
+  }
+  .feat-cell {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}

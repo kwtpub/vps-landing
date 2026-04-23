@@ -1,0 +1,87 @@
+.locs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.loc {
+  padding: 22px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 170px;
+}
+
+.loc:hover {
+  background: var(--paper-2);
+}
+
+.loc .lc {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--ink-4);
+  text-transform: uppercase;
+}
+
+.loc .lname {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.loc .lname em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink-3);
+}
+
+.loc .lmeta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.04em;
+  margin-top: auto;
+}
+
+.loc .lmeta b {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.loc.ooos .lmeta b {
+  color: var(--warn);
+}
+
+.loc .ping-bar {
+  height: 4px;
+  background: var(--paper-3);
+  border-radius: 99px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loc .ping-bar span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent);
+  border-radius: 99px;
+}
+
+.loc .lflag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-4);
+}
+
+@media (max-width: 1000px) {
+  .locs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

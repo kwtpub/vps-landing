@@ -1,0 +1,39 @@
+.btn {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  padding: 14px 22px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--accent-ink);
+}
+
+.btn-ghost {
+  color: var(--ink-2);
+  border-color: var(--line-2);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background: var(--accent-ink);
+}

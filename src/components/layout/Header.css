@@ -1,0 +1,55 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: color-mix(in oklab, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  z-index: 30;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 13.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.01em;
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.nav .pill {
+  border: 1px solid var(--line-2);
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ok);
+  letter-spacing: 0.08em;
+}
+
+.status-dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ok) 25%, transparent);
+}

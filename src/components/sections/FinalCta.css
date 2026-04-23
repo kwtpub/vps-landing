@@ -1,0 +1,41 @@
+.cta-final {
+  margin: 40px 0 0;
+  padding: 64px 48px;
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: linear-gradient(180deg, var(--paper-2), var(--paper));
+  border-radius: var(--radius);
+}
+
+.cta-final h3 {
+  font-family: var(--font-display);
+  font-size: 54px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cta-final h3 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.cta-final p {
+  color: var(--ink-3);
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 46ch;
+}
+
+@media (max-width: 1000px) {
+  .cta-final {
+    grid-template-columns: 1fr;
+    padding: 36px;
+  }
+}
