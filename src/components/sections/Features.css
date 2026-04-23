@@ -72,3 +72,16 @@
     border-bottom: 1px solid var(--line);
   }
 }
+
+@media (max-width: 560px) {
+  .feat-cell {
+    padding: 24px 20px;
+  }
+  .feat-cell h3 {
+    font-size: 22px;
+  }
+  .feat-cell .idx {
+    right: 18px;
+    top: 20px;
+  }
+}

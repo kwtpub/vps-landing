@@ -216,3 +216,35 @@
     border-bottom: 1px solid var(--line);
   }
 }
+
+@media (max-width: 560px) {
+  .cfg-left,
+  .cfg-right {
+    padding: 22px 20px;
+  }
+  .cfg-row {
+    margin-bottom: 22px;
+  }
+  .cfg-row .clabel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .cfg-row .clabel .v {
+    font-size: 18px;
+  }
+  .chip {
+    padding: 8px 11px;
+    font-size: 11.5px;
+  }
+  .slider-row {
+    grid-template-columns: 1fr 60px;
+  }
+  .sum-big {
+    font-size: 54px;
+  }
+  .sum-title {
+    font-size: 22px;
+  }
+}

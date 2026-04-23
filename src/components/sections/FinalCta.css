@@ -39,3 +39,20 @@
     padding: 36px;
   }
 }
+
+@media (max-width: 560px) {
+  .cta-final {
+    padding: 28px 22px;
+    gap: 24px;
+  }
+  .cta-final h3 {
+    font-size: 36px;
+  }
+  .cta-final p {
+    font-size: 14.5px;
+    margin-top: 14px;
+  }
+  .cta-final .btn {
+    width: 100%;
+  }
+}

@@ -123,7 +123,30 @@
     grid-template-columns: 1fr 1fr;
   }
   .plan {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .plan:nth-child(2n) {
+    border-right: 0;
+  }
+  .plan:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+  .plan {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+    padding: 22px 20px;
+  }
+  .plan:last-child {
+    border-bottom: 0;
+  }
+  .plan .pprice {
+    font-size: 40px;
   }
 }

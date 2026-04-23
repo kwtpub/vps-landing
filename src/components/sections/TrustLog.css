@@ -65,3 +65,24 @@
     border-right: 0;
   }
 }
+
+@media (max-width: 560px) {
+  .trust-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "ts tag"
+      "msg msg";
+    gap: 8px 12px;
+    padding: 14px 18px;
+  }
+  .trust-row .ts {
+    grid-area: ts;
+  }
+  .trust-row .tag {
+    grid-area: tag;
+    justify-self: end;
+  }
+  .trust-row .msg {
+    grid-area: msg;
+  }
+}

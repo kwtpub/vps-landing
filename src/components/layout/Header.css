@@ -28,7 +28,8 @@
   color: var(--ink);
 }
 
-.nav .pill {
+.nav .pill,
+.drawer-nav .pill {
   border: 1px solid var(--line-2);
   padding: 8px 14px;
   border-radius: 999px;
@@ -52,4 +53,84 @@
   border-radius: 50%;
   background: var(--ok);
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--ok) 25%, transparent);
+}
+
+.burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  background: transparent;
+}
+
+.burger span {
+  width: 16px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.2s;
+}
+
+.drawer {
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  z-index: 29;
+  padding: 24px 24px 40px;
+  overflow-y: auto;
+  animation: drawer-in 0.2s ease-out;
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.drawer-nav a {
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.drawer-nav a.pill {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.drawer-nav .status-dot {
+  margin-top: 16px;
+}
+
+@media (max-width: 760px) {
+  .top {
+    padding: 16px 20px;
+  }
+  .nav-desktop {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
 }

@@ -94,3 +94,24 @@ section.stripe {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 760px) {
+  .wrap {
+    padding: 0 20px;
+  }
+  section.stripe {
+    padding: 56px 0;
+  }
+  .sec-head {
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .sec-head h2 {
+    font-size: 34px;
+    line-height: 1.05;
+  }
+  .sec-head .lede {
+    font-size: 14.5px;
+    margin-top: 12px;
+  }
+}
