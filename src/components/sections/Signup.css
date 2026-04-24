@@ -105,6 +105,48 @@
   margin-bottom: 26px;
 }
 
+.signup-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.signup-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.signup-check input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.signup-check a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+  text-decoration: none;
+}
+
+.signup-check a:hover {
+  border-bottom-color: var(--ink-3);
+}
+
+@media (max-width: 560px) {
+  .signup-row-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .signup-field {
   display: flex;
   flex-direction: column;
