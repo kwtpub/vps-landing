@@ -16,6 +16,7 @@ import { Signup } from "./components/sections/Signup";
 import { LoginPage } from "./components/pages/LoginPage";
 import { TermsPage } from "./components/pages/TermsPage";
 import { PrivacyPolicyPage } from "./components/pages/PrivacyPolicyPage";
+import { PersonalDataConsentPage } from "./components/pages/PersonalDataConsentPage";
 import { CancelPage } from "./components/pages/CancelPage";
 import { useConfigurator } from "./hooks/useConfigurator";
 
@@ -41,6 +42,7 @@ export default function App() {
   if (path.startsWith("/login")) return <LoginPage />;
   if (path.startsWith("/terms")) return <TermsPage />;
   if (path.startsWith("/privacy-policy")) return <PrivacyPolicyPage />;
+  if (path.startsWith("/personal-data-consent")) return <PersonalDataConsentPage />;
   if (path.startsWith("/cancel")) return <CancelPage />;
 
   return (

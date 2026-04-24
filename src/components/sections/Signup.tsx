@@ -124,8 +124,9 @@ export function Signup() {
             <label className="signup-check">
               <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
               <span>
-                Соглашаюсь с <a href="/terms">офертой</a> и{" "}
-                <a href="/privacy-policy">политикой конфиденциальности</a>.
+                Соглашаюсь с <a href="/terms">публичной офертой</a>,{" "}
+                <a href="/privacy-policy">политикой конфиденциальности</a> и даю{" "}
+                <a href="/personal-data-consent">согласие на обработку персональных данных</a>.
               </span>
             </label>
 

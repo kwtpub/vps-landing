@@ -149,8 +149,9 @@ export function CancelPage() {
           <div className="legal-line">ИНН: 02602202610044 · ОКПО: 34703842</div>
         </div>
         <nav className="legal-foot-links">
-          <a href="/terms">Условия использования</a>
+          <a href="/terms">Публичная оферта</a>
           <a href="/privacy-policy">Политика конфиденциальности</a>
+          <a href="/personal-data-consent">Согласие на обработку данных</a>
           <a href="/cancel">Отменить продление</a>
         </nav>
       </footer>

@@ -31,8 +31,9 @@ export function Footer() {
             <div className="legal-line">Рег. номер: 326031-3301-ООО · от 26.02.2026</div>
           </div>
           <nav className="legal-links">
-            <a href="/terms">Условия использования</a>
+            <a href="/terms">Публичная оферта</a>
             <a href="/privacy-policy">Политика конфиденциальности</a>
+            <a href="/personal-data-consent">Согласие на обработку данных</a>
             <a href="/cancel">Отменить продление</a>
           </nav>
         </div>
