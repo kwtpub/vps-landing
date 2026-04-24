@@ -1,0 +1,45 @@
+# Caddy конфиг для StrelkaVPS.
+# Caddy сам выпускает и продлевает Let's Encrypt сертификаты
+# для обоих хостов и проксирует на landing-контейнер.
+
+{
+    # E-mail для уведомлений Let's Encrypt об истечении сертификатов.
+    # При первой выдаче ACME требует согласия с TOS — email в compose-окружении.
+    email {$ACME_EMAIL}
+}
+
+# Основной хост + www (www перенаправляется на apex)
+strelkavps.ru, www.strelkavps.ru {
+    # Безопасные заголовки. HSTS включаем только на основном хосте —
+    # Caddy сам выдаёт TLS, так что "forever strict" безопасно.
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options    "nosniff"
+        X-Frame-Options           "SAMEORIGIN"
+        Referrer-Policy           "strict-origin-when-cross-origin"
+        Permissions-Policy        "camera=(), microphone=(), geolocation=()"
+        # Скрываем server-идентификатор
+        -Server
+    }
+
+    # Редирект www → apex (301)
+    @www host www.strelkavps.ru
+    redir @www https://strelkavps.ru{uri} 301
+
+    # Сжатие на уровне прокси (nginx тоже жмёт, но gzip сейчас в nginx отключить нельзя)
+    encode zstd gzip
+
+    # Доверяем только X-Forwarded-* от Caddy (он же у нас фронт)
+    reverse_proxy strelkavps-landing:80 {
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+        header_up X-Forwarded-Host {host}
+    }
+
+    # Лог в stdout, ротацию делает docker (json-file, 10m×3)
+    log {
+        output stdout
+        format console
+    }
+}

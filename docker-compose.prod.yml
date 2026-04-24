@@ -1,0 +1,54 @@
+# Прод-compose: landing + Caddy с автосертификатами Let's Encrypt.
+# Использование:  docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Что делает этот override:
+# — Убирает проброс :80 на host у landing (теперь трафик идёт только через Caddy).
+# — Добавляет сервис caddy, который слушает :80 и :443, проксирует на landing.
+# — Объединяет контейнеры в одну docker-сеть strelkavps-edge.
+
+services:
+  web:
+    # Отменяем ports из базового compose — landing больше не смотрит наружу.
+    ports: !reset []
+    networks:
+      - edge
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: strelkavps-caddy
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp" # HTTP/3 (QUIC)
+    environment:
+      # ACME e-mail подхватывается из /opt/strelkavps/.env на VPS
+      - ACME_EMAIL=${ACME_EMAIL:-admin@strelkavps.ru}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data       # сертификаты и ACME-аккаунт — persistent
+      - caddy_config:/config
+    networks:
+      - edge
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  edge:
+    name: strelkavps-edge
+
+volumes:
+  caddy_data:
+  caddy_config:
