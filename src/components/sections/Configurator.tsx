@@ -208,11 +208,20 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
               </em>
             </div>
             <div className="sum-big">
-              {computed.priceFmt}
+              {computed.perMonthFmt}
               <em>₽ / мес</em>
             </div>
             <div className="sum-sub">
-              ≈ {computed.perDay} ₽ в день · автопродление
+              {state.months > 1 ? (
+                <>
+                  {computed.priceFmt} ₽ за {state.months} мес
+                  {computed.discountPercent > 0 && (
+                    <span style={{ color: "var(--accent)" }}> · выгода {computed.discountPercent}%</span>
+                  )}
+                </>
+              ) : (
+                <>≈ {computed.perDay} ₽ в день · автопродление</>
+              )}
             </div>
             <ul className="sum-list">
               {sumRows.map((r, i) => (

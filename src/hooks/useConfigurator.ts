@@ -60,15 +60,19 @@ export function useConfigurator() {
   const computed = useMemo(() => {
     const extrasList = extrasChips.filter((e) => extras.has(e.value));
     const extraTotal = extrasList.reduce((a, b) => a + b.price, 0);
-    let price = 490 + devices * 280 + speed * 320;
-    price = price * months * (months >= 12 ? 0.75 : 1);
-    price += extraTotal;
+    const baseMonthly = 490 + devices * 280 + speed * 320;
+    const multiplier = months >= 12 ? 0.77 : months >= 6 ? 0.84 : 1;
+    const discountPercent = months >= 12 ? 23 : months >= 6 ? 16 : 0;
+    const perMonth = baseMonthly * multiplier;
+    const price = perMonth * months + extraTotal;
     return {
       price,
       priceFmt: fmt(price),
+      perMonthFmt: fmt(perMonth),
       perDay: fmt(price / 30),
       planName: planName(devices),
       extrasList,
+      discountPercent,
     };
   }, [devices, speed, months, extras]);
 
