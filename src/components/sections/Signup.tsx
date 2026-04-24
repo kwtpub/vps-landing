@@ -139,7 +139,7 @@ export function Signup() {
               <Button variant="primary" type="submit" disabled={loading} style={{ width: "100%" }}>
                 {loading ? "Создаём аккаунт…" : "Зарегистрироваться →"}
               </Button>
-              <Button variant="ghost" href="/" style={{ width: "100%" }}>
+              <Button variant="ghost" href="/login" style={{ width: "100%" }}>
                 Я уже зарегистрирован
               </Button>
             </div>

@@ -1,0 +1,223 @@
+.login-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.login-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.login-brand {
+  text-decoration: none;
+}
+
+.login-back {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.login-back:hover {
+  color: var(--ink);
+}
+
+.login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid var(--line);
+  padding: 44px 44px 36px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  position: relative;
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.login-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  margin-bottom: 22px;
+}
+
+.login-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.login-title em {
+  font-style: italic;
+  color: var(--ink-3);
+  font-weight: 300;
+}
+
+.login-lede {
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+}
+
+.login-forgot {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-2);
+  padding-bottom: 1px;
+  text-transform: none;
+  transition: color 0.18s, border-color 0.18s;
+}
+
+.login-forgot:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink-3);
+}
+
+.login-input {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.login-input::placeholder {
+  color: var(--ink-4);
+}
+
+.login-input:focus {
+  border-color: var(--ink-3);
+}
+
+.login-error {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  line-height: 1.5;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.login-note {
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.55;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.login-note a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+  text-decoration: none;
+}
+
+.login-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-4);
+}
+
+@media (max-width: 700px) {
+  .login-top {
+    padding: 18px 20px;
+  }
+  .login-main {
+    padding: 40px 16px;
+  }
+  .login-card {
+    padding: 28px 22px;
+  }
+  .login-title {
+    font-size: 30px;
+  }
+  .login-foot {
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 20px;
+  }
+}

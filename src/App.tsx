@@ -13,6 +13,7 @@ import { TrustLog } from "./components/sections/TrustLog";
 import { Faq } from "./components/sections/Faq";
 import { FinalCta } from "./components/sections/FinalCta";
 import { Signup } from "./components/sections/Signup";
+import { LoginPage } from "./components/pages/LoginPage";
 import { TermsPage } from "./components/pages/TermsPage";
 import { PrivacyPolicyPage } from "./components/pages/PrivacyPolicyPage";
 import { CancelPage } from "./components/pages/CancelPage";
@@ -37,6 +38,7 @@ export default function App() {
   const path = useRoute();
 
   if (path.startsWith("/signup")) return <Signup />;
+  if (path.startsWith("/login")) return <LoginPage />;
   if (path.startsWith("/terms")) return <TermsPage />;
   if (path.startsWith("/privacy-policy")) return <PrivacyPolicyPage />;
   if (path.startsWith("/cancel")) return <CancelPage />;
