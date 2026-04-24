@@ -11,7 +11,7 @@ export type LegalSection = {
 type Props = {
   eyebrow: string;
   title: ReactNode;
-  lede: ReactNode;
+  lede?: ReactNode;
   updated: string;
   version: string;
   sections: LegalSection[];
@@ -36,7 +36,7 @@ export function LegalPage({ eyebrow, title, lede, updated, version, sections, ch
             <span className="dot" /> {eyebrow}
           </div>
           <h1 className="legal-title">{title}</h1>
-          <p className="legal-lede">{lede}</p>
+          {lede && <p className="legal-lede">{lede}</p>}
           <dl className="legal-kv">
             <div>
               <dt>Обновлено</dt>
