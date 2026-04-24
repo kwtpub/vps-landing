@@ -21,9 +21,6 @@ export function FinalCta() {
             <Button variant="accent" href="/signup" style={{ padding: "16px 26px", fontSize: 15 }}>
               Развернуть первый сервер →
             </Button>
-            <Button variant="ghost" style={{ padding: "14px 22px" }}>
-              Открыть документацию
-            </Button>
             <div
               style={{
                 fontFamily: "var(--font-mono)",
