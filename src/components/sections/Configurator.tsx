@@ -239,20 +239,6 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
               >
                 Оформить →
               </Button>
-              <Button variant="ghost" style={{ width: "100%", justifyContent: "center" }}>
-                Поделиться конфигурацией
-              </Button>
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                color: "var(--ink-4)",
-                letterSpacing: "0.04em",
-                marginTop: 18,
-              }}
-            >
-              * цены указаны за выбранный срок. Оплата: BTC, Lightning, XMR, СБП, карта РФ/мир.
             </div>
           </div>
         </div>
