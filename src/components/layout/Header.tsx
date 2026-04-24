@@ -4,7 +4,6 @@ import "./Header.css";
 
 const links = [
   { href: "#plans", label: "Тарифы" },
-  { href: "#config", label: "Конфигуратор" },
   { href: "#locs", label: "Локации" },
   { href: "#privacy", label: "Приватность" },
   { href: "#faq", label: "FAQ" },

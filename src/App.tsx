@@ -4,7 +4,6 @@ import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
 import { Ticker } from "./components/sections/Ticker";
 import { Plans } from "./components/sections/Plans";
-import { Configurator } from "./components/sections/Configurator";
 import { Locations } from "./components/sections/Locations";
 import { Features } from "./components/sections/Features";
 import { Privacy } from "./components/sections/Privacy";
@@ -18,7 +17,6 @@ import { TermsPage } from "./components/pages/TermsPage";
 import { PrivacyPolicyPage } from "./components/pages/PrivacyPolicyPage";
 import { PersonalDataConsentPage } from "./components/pages/PersonalDataConsentPage";
 import { CancelPage } from "./components/pages/CancelPage";
-import { useConfigurator } from "./hooks/useConfigurator";
 
 function useRoute() {
   const [path, setPath] = useState(() =>
@@ -35,7 +33,6 @@ function useRoute() {
 }
 
 export default function App() {
-  const configurator = useConfigurator();
   const path = useRoute();
 
   if (path.startsWith("/signup")) return <Signup />;
@@ -49,11 +46,10 @@ export default function App() {
     <>
       <Header />
       <main className="wrap">
-        <Hero pingBase={configurator.pingBase} />
+        <Hero />
       </main>
       <Ticker />
       <Plans />
-      <Configurator api={configurator} />
       <Locations />
       <Features />
       <Privacy />

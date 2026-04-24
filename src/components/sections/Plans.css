@@ -1,156 +1,65 @@
-.term-switch {
-  display: inline-flex;
-  gap: 0;
+.price-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 4px;
-  margin-bottom: 28px;
-  background: var(--paper);
-}
-
-.term-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  padding: 10px 18px;
-  border-radius: 2px;
-  transition: background 0.18s, color 0.18s;
-  cursor: pointer;
-  min-width: 148px;
-  text-align: left;
-}
-
-.term-tab:hover:not(.on) {
-  background: color-mix(in srgb, var(--ink) 5%, transparent);
-}
-
-.term-tab.on {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.term-tab .term-label {
-  font-family: var(--font-ui);
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.term-tab .term-discount {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-}
-
-.term-tab.on .term-discount {
-  color: color-mix(in srgb, var(--accent) 65%, white 35%);
-}
-
-.term-tab .term-discount.muted {
-  color: var(--ink-4);
-}
-
-.term-tab.on .term-discount.muted {
-  color: color-mix(in srgb, var(--paper) 55%, transparent);
-}
-
-.plans {
+  padding: 44px 48px 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.plan {
-  padding: 28px 26px;
-  border-right: 1px solid var(--line);
-  background: var(--paper);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 44px;
+  align-items: start;
+  max-width: 960px;
+  margin: 0 auto;
   position: relative;
+  background: var(--paper);
 }
 
-.plan:last-child {
-  border-right: 0;
+.price-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 56px;
+  height: 1px;
+  background: var(--accent);
 }
 
-.plan.feat {
-  background: var(--paper-2);
-}
-
-.plan .pname {
-  font-family: var(--font-display);
-  font-size: 26px;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-}
-
-.plan .pname em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink-3);
-}
-
-.plan .ptag {
+.price-card-head .ptag {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: var(--ink-4);
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-.plan .pprice {
+.price-card-head .pname {
   font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size: 42px;
   line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 26px;
 }
 
-.plan .pprice em {
+.price-card-head .pname em {
   font-style: italic;
   font-weight: 300;
   color: var(--ink-3);
-  font-size: 16px;
-  margin-left: 4px;
 }
 
-.plan .psub {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
-  color: var(--ink-3);
-  margin-top: -8px;
-}
-
-.plan .psub b {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.plan .psub-tag {
-  color: var(--accent);
-}
-
-.plan .specs {
+.price-specs {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px dashed var(--line);
-  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-top: 1px dashed var(--line);
+  padding-top: 18px;
 }
 
-.plan .specs li {
+.price-specs li {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 72px 1fr;
   gap: 14px;
   font-family: var(--font-mono);
   font-size: 12.5px;
@@ -158,7 +67,7 @@
   letter-spacing: 0.01em;
 }
 
-.plan .specs li span {
+.price-specs li span {
   color: var(--ink-4);
   text-transform: uppercase;
   font-size: 10.5px;
@@ -166,82 +75,130 @@
   align-self: center;
 }
 
-.plan .plabel {
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  border-radius: 2px;
-}
-
-.plan .pbtn {
-  margin-top: auto;
+.price-list {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
 }
 
-.plan .pbtn .btn {
-  flex: 1;
-  text-align: center;
-  padding: 11px 14px;
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 4px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px dashed var(--line);
+  transition: background 0.18s, padding 0.18s;
+}
+
+.price-row:last-child {
+  border-bottom: 0;
+}
+
+.price-row:hover {
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+  padding-left: 10px;
+}
+
+.price-months {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  min-width: 120px;
+}
+
+.price-sep {
+  color: var(--ink-4);
+  font-family: var(--font-mono);
+}
+
+.price-total {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--ink-2);
+  letter-spacing: -0.01em;
+}
+
+.price-badge {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-weight: 600;
   font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.01em;
 }
 
-@media (max-width: 1000px) {
-  .plans {
-    grid-template-columns: 1fr 1fr;
-  }
-  .plan {
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .plan:nth-child(2n) {
-    border-right: 0;
-  }
-  .plan:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
+.price-cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 4px;
 }
 
-@media (max-width: 700px) {
-  .term-switch {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.price-cta .btn {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+.price-note {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 820px) {
+  .price-card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px 28px;
+    gap: 28px;
+  }
+  .price-card-head .pname {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+  .price-row {
+    gap: 8px;
+    padding: 12px 4px;
+  }
+  .price-months {
+    font-size: 15px;
+    min-width: 100px;
+  }
+  .price-total {
+    font-size: 18px;
+  }
+  .price-badge {
+    font-size: 12px;
+  }
+  .price-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .price-cta .btn {
     width: 100%;
   }
-  .term-tab {
-    min-width: 0;
-    padding: 10px 12px;
-    align-items: center;
+  .price-note {
     text-align: center;
-  }
-  .term-tab .term-label {
-    font-size: 12.5px;
-  }
-  .term-tab .term-discount {
-    font-size: 10px;
   }
 }
 
-@media (max-width: 560px) {
-  .plans {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .price-row {
+    flex-wrap: wrap;
   }
-  .plan {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 22px 20px;
-  }
-  .plan:last-child {
-    border-bottom: 0;
-  }
-  .plan .pprice {
-    font-size: 40px;
+  .price-badge {
+    margin-left: 130px;
+    font-size: 11.5px;
   }
 }

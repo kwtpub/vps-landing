@@ -16,7 +16,6 @@ export function Footer() {
           <div>
             <h4>Продукт</h4>
             <a href="#plans">Тарифы</a>
-            <a href="#config">Конфигуратор</a>
             <a href="#locs">Локации</a>
             <a href="#">Status-страница</a>
           </div>

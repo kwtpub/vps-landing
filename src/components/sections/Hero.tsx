@@ -3,11 +3,7 @@ import { Metrics } from "./Metrics";
 import { useLiveCounter } from "../../hooks/useLiveCounter";
 import "./Hero.css";
 
-type HeroProps = {
-  pingBase: number;
-};
-
-export function Hero({ pingBase }: HeroProps) {
+export function Hero() {
   const counter = useLiveCounter();
 
   return (
@@ -37,15 +33,15 @@ export function Hero({ pingBase }: HeroProps) {
         <Button variant="primary" href="/signup">
           Развернуть за 38 секунд →
         </Button>
-        <Button variant="ghost" href="#config">
-          Собрать свою конфигурацию
+        <Button variant="ghost" href="#plans">
+          Посмотреть тарифы
         </Button>
         <span className="hero-note">
-          от <b>890 ₽</b> / мес · <b>без KYC</b> · <b>возврат</b> в 7 дней
+          от <b>350 ₽</b> / мес · <b>без KYC</b> · <b>возврат</b> в 7 дней
         </span>
       </div>
 
-      <Metrics pingBase={pingBase} />
+      <Metrics pingBase={14} />
     </section>
   );
 }
