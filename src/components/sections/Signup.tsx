@@ -144,26 +144,6 @@ export function Signup() {
               </Button>
             </div>
           </form>
-
-          <ul className="signup-meta">
-            <li>
-              <span>Провижининг</span>
-              <b>~ 38 секунд</b>
-            </li>
-            <li>
-              <span>Без документов</span>
-              <b>и без KYC</b>
-            </li>
-            <li>
-              <span>Возврат средств</span>
-              <b>7 дней</b>
-            </li>
-          </ul>
-
-          <div className="signup-note">
-            Уже пользуетесь StrelkaVPS? Панель доступна по прямой ссылке —{" "}
-            <a href="#">panel.strelkavps.io</a>. Эта форма только для создания нового аккаунта.
-          </div>
         </div>
       </main>
 
