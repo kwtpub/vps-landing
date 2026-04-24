@@ -44,12 +44,24 @@ h1.display .accent {
   font-weight: 500;
 }
 
+.hero-tagline {
+  max-width: 640px;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+  margin: 28px 0 0;
+}
+
 .hero-sub {
   max-width: 640px;
   font-size: 17px;
   line-height: 1.55;
-  color: var(--ink-2);
-  margin-top: 28px;
+  color: var(--ink-3);
+  margin-top: 18px;
 }
 
 .cta-row {
@@ -116,9 +128,13 @@ h1.display .accent {
     letter-spacing: -0.025em;
     margin-top: 18px;
   }
+  .hero-tagline {
+    font-size: 18px;
+    margin-top: 18px;
+  }
   .hero-sub {
     font-size: 15px;
-    margin-top: 20px;
+    margin-top: 14px;
   }
   .cta-row {
     margin-top: 26px;

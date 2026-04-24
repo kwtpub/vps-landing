@@ -1,0 +1,341 @@
+.cancel-shell {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.cancel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cancel-brand {
+  text-decoration: none;
+}
+
+.cancel-back {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.cancel-back:hover {
+  color: var(--ink);
+}
+
+.cancel-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+.cancel-card {
+  width: 100%;
+  max-width: 620px;
+  border: 1px solid var(--line);
+  padding: 44px 44px 36px;
+  position: relative;
+}
+
+.cancel-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.cancel-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  margin-bottom: 22px;
+}
+
+.cancel-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.cancel-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.cancel-title em {
+  font-style: italic;
+  color: var(--ink-3);
+  font-weight: 300;
+}
+
+.cancel-lede {
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+.cancel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cancel-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cancel-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+}
+
+.cancel-input {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.cancel-input::placeholder {
+  color: var(--ink-4);
+}
+
+.cancel-input:focus {
+  border-color: var(--ink-3);
+}
+
+.cancel-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 18px 18px 16px;
+  margin: 4px 0 0;
+}
+
+.cancel-radio-group legend {
+  padding: 0 6px;
+  margin-left: -6px;
+}
+
+.cancel-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+
+.cancel-radio input {
+  accent-color: var(--accent);
+}
+
+.cancel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel-meta {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cancel-meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cancel-meta span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--ink-4);
+}
+
+.cancel-meta b {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.cancel-note {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.55;
+}
+
+.cancel-note code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.cancel-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.cancel-success-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.cancel-success h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.cancel-success p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+  margin: 0 0 18px;
+  max-width: 42ch;
+}
+
+.cancel-ref {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-4);
+  padding: 8px 12px;
+  border: 1px dashed var(--line-2);
+  margin-bottom: 18px;
+}
+
+.cancel-foot {
+  border-top: 1px solid var(--line);
+  padding: 28px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+
+.cancel-foot .legal-company {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-bottom: 10px;
+}
+
+.cancel-foot .legal-line {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--ink-4);
+}
+
+.cancel-foot .legal-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  justify-content: flex-end;
+  align-self: end;
+}
+
+.cancel-foot .legal-foot-links a {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 2px 0;
+  transition: color 0.18s, border-color 0.18s;
+}
+
+.cancel-foot .legal-foot-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line-2);
+}
+
+@media (max-width: 900px) {
+  .cancel-foot {
+    grid-template-columns: 1fr;
+    padding: 24px 24px 28px;
+  }
+  .cancel-foot .legal-foot-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .cancel-top {
+    padding: 18px 20px;
+  }
+  .cancel-main {
+    padding: 32px 16px;
+  }
+  .cancel-card {
+    padding: 28px 22px;
+  }
+  .cancel-title {
+    font-size: 30px;
+  }
+  .cancel-meta {
+    grid-template-columns: 1fr;
+  }
+}

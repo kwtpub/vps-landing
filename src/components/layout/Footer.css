@@ -39,10 +39,58 @@ footer {
   margin: 14px 0 0;
 }
 
+.foot-legal {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.legal-company {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-bottom: 10px;
+}
+
+.legal-line {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--ink-4);
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px 28px;
+  align-self: end;
+  justify-content: flex-end;
+}
+
+.legal-links a {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 2px 0;
+  transition: color 0.18s, border-color 0.18s;
+}
+
+.legal-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line-2);
+}
+
 .foot-bot {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
@@ -54,6 +102,17 @@ footer {
 @media (max-width: 1000px) {
   .foot {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .foot-legal {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .legal-links {
+    justify-content: flex-start;
+    gap: 14px 22px;
   }
 }
 
@@ -69,6 +128,9 @@ footer {
   .foot-bot {
     flex-direction: column;
     gap: 8px;
+    margin-top: 24px;
+  }
+  .foot-legal {
     margin-top: 36px;
   }
 }

@@ -13,6 +13,9 @@ import { TrustLog } from "./components/sections/TrustLog";
 import { Faq } from "./components/sections/Faq";
 import { FinalCta } from "./components/sections/FinalCta";
 import { Signup } from "./components/sections/Signup";
+import { TermsPage } from "./components/pages/TermsPage";
+import { PrivacyPolicyPage } from "./components/pages/PrivacyPolicyPage";
+import { CancelPage } from "./components/pages/CancelPage";
 import { useConfigurator } from "./hooks/useConfigurator";
 
 function useRoute() {
@@ -33,9 +36,10 @@ export default function App() {
   const configurator = useConfigurator();
   const path = useRoute();
 
-  if (path.startsWith("/signup")) {
-    return <Signup />;
-  }
+  if (path.startsWith("/signup")) return <Signup />;
+  if (path.startsWith("/terms")) return <TermsPage />;
+  if (path.startsWith("/privacy-policy")) return <PrivacyPolicyPage />;
+  if (path.startsWith("/cancel")) return <CancelPage />;
 
   return (
     <>
