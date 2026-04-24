@@ -18,7 +18,7 @@ export function FinalCta() {
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
-            <Button variant="accent" style={{ padding: "16px 26px", fontSize: 15 }}>
+            <Button variant="accent" href="/signup" style={{ padding: "16px 26px", fontSize: 15 }}>
               Развернуть первый сервер →
             </Button>
             <Button variant="ghost" style={{ padding: "14px 22px" }}>

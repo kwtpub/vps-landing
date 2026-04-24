@@ -223,7 +223,11 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
               ))}
             </ul>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              <Button variant="primary" style={{ width: "100%", justifyContent: "center" }}>
+              <Button
+                variant="primary"
+                href="/signup?from=configurator"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
                 Оформить →
               </Button>
               <Button variant="ghost" style={{ width: "100%", justifyContent: "center" }}>

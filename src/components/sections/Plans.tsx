@@ -42,7 +42,9 @@ export function Plans() {
                 ))}
               </ul>
               <div className="pbtn">
-                <Button variant={plan.ctaVariant}>{plan.ctaLabel}</Button>
+                <Button variant={plan.ctaVariant} href={`/signup?plan=${plan.id}`}>
+                  {plan.ctaLabel}
+                </Button>
               </div>
             </div>
           ))}

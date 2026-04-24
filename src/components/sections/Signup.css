@@ -1,0 +1,235 @@
+.signup-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.signup-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.signup-brand {
+  text-decoration: none;
+}
+
+.signup-back {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.signup-back:hover {
+  color: var(--ink);
+}
+
+.signup-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--line);
+  padding: 44px 44px 36px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  position: relative;
+}
+
+.signup-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.signup-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  margin-bottom: 22px;
+}
+
+.signup-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.signup-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.signup-title em {
+  font-style: italic;
+  color: var(--ink-3);
+  font-weight: 300;
+}
+
+.signup-lede {
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.signup-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+}
+
+.signup-input {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.signup-input::placeholder {
+  color: var(--ink-4);
+}
+
+.signup-input:focus {
+  border-color: var(--ink-3);
+}
+
+.signup-error {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.signup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.signup-meta {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.signup-meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.signup-meta span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--ink-4);
+}
+
+.signup-meta b {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.signup-note {
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.55;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.signup-note a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+  text-decoration: none;
+}
+
+.signup-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-4);
+}
+
+@media (max-width: 700px) {
+  .signup-top {
+    padding: 18px 20px;
+  }
+  .signup-main {
+    padding: 40px 16px;
+  }
+  .signup-card {
+    padding: 28px 22px;
+  }
+  .signup-title {
+    font-size: 30px;
+  }
+  .signup-meta {
+    grid-template-columns: 1fr;
+  }
+  .signup-foot {
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 20px;
+  }
+}

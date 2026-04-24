@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
@@ -11,10 +12,30 @@ import { Stack } from "./components/sections/Stack";
 import { TrustLog } from "./components/sections/TrustLog";
 import { Faq } from "./components/sections/Faq";
 import { FinalCta } from "./components/sections/FinalCta";
+import { Signup } from "./components/sections/Signup";
 import { useConfigurator } from "./hooks/useConfigurator";
+
+function useRoute() {
+  const [path, setPath] = useState(() =>
+    typeof window === "undefined" ? "/" : window.location.pathname,
+  );
+
+  useEffect(() => {
+    const onPop = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  return path;
+}
 
 export default function App() {
   const configurator = useConfigurator();
+  const path = useRoute();
+
+  if (path.startsWith("/signup")) {
+    return <Signup />;
+  }
 
   return (
     <>

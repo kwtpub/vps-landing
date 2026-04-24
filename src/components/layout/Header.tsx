@@ -31,7 +31,7 @@ export function Header() {
             </a>
           ))}
           <span className="status-dot">ВСЁ В НОРМЕ · 72мс</span>
-          <a href="#" className="pill">
+          <a href="/signup" className="pill">
             Панель
           </a>
         </nav>
@@ -55,7 +55,7 @@ export function Header() {
                 {l.label}
               </a>
             ))}
-            <a href="#" className="pill" onClick={() => setOpen(false)}>
+            <a href="/signup" className="pill" onClick={() => setOpen(false)}>
               Панель
             </a>
             <span className="status-dot">ВСЁ В НОРМЕ · 72мс</span>

@@ -36,8 +36,12 @@ export function Hero({ pingBase }: HeroProps) {
       </p>
 
       <div className="cta-row">
-        <Button variant="primary">Развернуть за 38 секунд →</Button>
-        <Button variant="ghost">Собрать свою конфигурацию</Button>
+        <Button variant="primary" href="/signup">
+          Развернуть за 38 секунд →
+        </Button>
+        <Button variant="ghost" href="#config">
+          Собрать свою конфигурацию
+        </Button>
         <span className="hero-note">
           от <b>890 ₽</b> / мес · <b>без KYC</b> · <b>возврат</b> в 7 дней
         </span>
