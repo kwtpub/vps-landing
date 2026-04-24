@@ -29,9 +29,9 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
 
   const sumRows = [
     { k: "Локация", v: state.loc },
-    { k: "Протокол", v: state.proto },
-    { k: "Устройств", v: `${state.devices}` },
-    { k: "Скорость", v: `${state.speed} Гбит/с` },
+    { k: "ОС / образ", v: state.proto },
+    { k: "vCPU", v: `${state.devices} ядра` },
+    { k: "Канал", v: `${state.speed} Гбит/с` },
     { k: "Срок", v: `${state.months} мес` },
     { k: "Трафик", v: "без лимита" },
     ...computed.extrasList.map((e) => ({ k: "+ " + e.label, v: `+${e.price.toLocaleString("ru-RU")} ₽` })),
@@ -47,7 +47,7 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
               Или соберите <em>по своей мерке.</em>
             </>
           }
-          lede="Все ресурсы масштабируются независимо, оплата посекундная. Перенос с тарифа в свою конфигурацию — без простоя."
+          lede="vCPU, память, диск и канал масштабируются независимо, оплата посекундная. Перенос с тарифа в свою конфигурацию — без простоя и перезагрузок."
         />
 
         <div className="config">
@@ -72,10 +72,10 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
 
             <div className="cfg-row">
               <div className="clabel">
-                <span className="k">Устройств</span>
+                <span className="k">vCPU · ядра</span>
                 <span className="v">
                   {state.devices}
-                  <em> устройства</em>
+                  <em> ядра</em>
                 </span>
               </div>
               <div className="slider-row">
@@ -83,27 +83,27 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
                   className="slider"
                   type="range"
                   min={1}
-                  max={20}
+                  max={16}
                   step={1}
                   value={state.devices}
                   onChange={(e) => set.setDevices(+e.target.value)}
                 />
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ink-3)", textAlign: "right" }}>
-                  {state.devices}/20
+                  {state.devices}/16
                 </span>
               </div>
               <div className="ticks">
                 <span>1</span>
-                <span>5</span>
-                <span>10</span>
-                <span>15</span>
-                <span>20</span>
+                <span>4</span>
+                <span>8</span>
+                <span>12</span>
+                <span>16</span>
               </div>
             </div>
 
             <div className="cfg-row">
               <div className="clabel">
-                <span className="k">Скорость · Гбит/с</span>
+                <span className="k">Канал · Гбит/с</span>
                 <span className="v">
                   {state.speed}
                   <em> Гбит/с</em>
@@ -163,7 +163,7 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
 
             <div className="cfg-row">
               <div className="clabel">
-                <span className="k">Протокол</span>
+                <span className="k">Образ / ОС</span>
                 <span className="v">{labelWithEm(state.proto)}</span>
               </div>
               <div className="chips">
@@ -204,7 +204,7 @@ export function Configurator({ api }: { api: ConfiguratorApi }) {
               {computed.planName}
               <em>
                 {" · "}
-                {state.devices} устр · {state.speed} Гбит/с · {state.months} мес
+                {state.devices} vCPU · {state.speed} Гбит/с · {state.months} мес
               </em>
             </div>
             <div className="sum-big">

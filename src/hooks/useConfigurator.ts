@@ -13,25 +13,26 @@ export const locationChips: LocationChip[] = [
 ];
 
 export const protocolChips: ProtocolChip[] = [
-  { value: "WireGuard · быстро", label: "WireGuard" },
-  { value: "OpenVPN · совместимо", label: "OpenVPN" },
-  { value: "Shadowsocks · обфускация", label: "Shadowsocks" },
-  { value: "Reality · глубокая маскировка", label: "Reality" },
-  { value: "IKEv2 · iOS родной", label: "IKEv2" },
+  { value: "Debian 12 · минимум", label: "Debian 12" },
+  { value: "Ubuntu 24.04 LTS", label: "Ubuntu 24.04" },
+  { value: "Rocky Linux 9", label: "Rocky 9" },
+  { value: "Alpine 3.20 · лёгкий", label: "Alpine" },
+  { value: "NixOS 24.11 · decl.", label: "NixOS" },
+  { value: "Windows Server 2022", label: "Windows" },
 ];
 
 export const extrasChips: ExtrasChip[] = [
-  { value: "Выделенный IP", label: "Выделенный IP", price: 250 },
-  { value: "Multi-hop", label: "Multi-hop", price: 400 },
-  { value: "Порт-форвард", label: "Порт-форвард", price: 300 },
-  { value: "Статич. IPv4", label: "Статич. IPv4", price: 200 },
-  { value: "DNS-фильтр", label: "DNS-фильтр", price: 150 },
+  { value: "Доп. IPv4", label: "Доп. IPv4", price: 250 },
+  { value: "Бэкапы 14 дн", label: "Бэкапы 14 дн", price: 400 },
+  { value: "Мониторинг", label: "Мониторинг 24/7", price: 300 },
+  { value: "Rescue ISO", label: "Rescue ISO", price: 0 },
+  { value: "DDoS L7", label: "DDoS L7", price: 600 },
 ];
 
 function planName(c: number) {
-  if (c <= 1) return "Один канал";
-  if (c <= 5) return "Пятёрка";
-  if (c <= 10) return "Десятка";
+  if (c <= 2) return "Одиночка";
+  if (c <= 4) return "Пятёрка";
+  if (c <= 8) return "Десятка";
   return "Гарнизон";
 }
 
@@ -42,7 +43,7 @@ function fmt(n: number) {
 export function useConfigurator() {
   const [loc, setLoc] = useState(locationChips[0].value);
   const [proto, setProto] = useState(protocolChips[0].value);
-  const [devices, setDevices] = useState(5);
+  const [devices, setDevices] = useState(4);
   const [speed, setSpeed] = useState(1);
   const [months, setMonths] = useState(1);
   const [extras, setExtras] = useState<Set<string>>(new Set());
@@ -59,7 +60,7 @@ export function useConfigurator() {
   const computed = useMemo(() => {
     const extrasList = extrasChips.filter((e) => extras.has(e.value));
     const extraTotal = extrasList.reduce((a, b) => a + b.price, 0);
-    let price = 190 + devices * 80 + speed * 180;
+    let price = 490 + devices * 280 + speed * 320;
     price = price * months * (months >= 12 ? 0.75 : 1);
     price += extraTotal;
     return {

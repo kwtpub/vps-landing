@@ -10,16 +10,16 @@ export function FinalCta() {
             <h3>
               От оплаты
               <br />
-              до подключения — <em>38 секунд.</em>
+              до root-доступа — <em>38 секунд.</em>
             </h3>
             <p>
-              Попробуйте Strelka на самом маленьком тарифе за 390 ₽. Не понравится — вернём деньги в течение 7 дней, без
-              вопросов и форм.
+              Попробуйте StrelkaVPS на самом маленьком тарифе за 890 ₽. Не понравится — вернём деньги в течение 7 дней,
+              без вопросов и форм.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "flex-start" }}>
             <Button variant="accent" style={{ padding: "16px 26px", fontSize: 15 }}>
-              Подключить первое устройство →
+              Развернуть первый сервер →
             </Button>
             <Button variant="ghost" style={{ padding: "14px 22px" }}>
               Открыть документацию

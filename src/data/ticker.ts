@@ -5,7 +5,7 @@ export const tickerItems: string[] = [
   "ZRH-1 <em>●</em> <b>99.98%</b>",
   "EVN-1 <em>●</em> <b>99.97%</b>",
   "скраб <em>●</em> <b>480 Гбит/с</b>",
-  "туннель <em>●</em> <b>00:00:38</b>",
+  "деплой <em>●</em> <b>00:00:38</b>",
   "без KYC <em>●</em> <b>ok</b>",
   "СБП / BTC / XMR <em>●</em> <b>принимаем</b>",
 ];

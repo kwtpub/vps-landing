@@ -30,12 +30,12 @@ export function Metrics({ pingBase }: { pingBase: number }) {
         <div className="sub">ближайший: Хельсинки</div>
       </div>
       <div className="metric">
-        <div className="k">Готовность подключения</div>
+        <div className="k">Готовность сервера</div>
         <div className="v">
           00:{deploySec}
           <em>c</em>
         </div>
-        <div className="sub">от оплаты до туннеля</div>
+        <div className="sub">от оплаты до root-доступа</div>
       </div>
       <div className="metric">
         <div className="k">DDoS фильтр</div>

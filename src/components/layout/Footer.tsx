@@ -9,8 +9,8 @@ export function Footer() {
           <div className="foot-brand">
             <BrandMark gap={14} />
             <p>
-              Приватный VPN в пяти нейтральных юрисдикциях. Сделано в Ереване командой из 7 человек и одного кота. Оплата
-              из 76 стран, включая Россию.
+              Приватные выделенные серверы в пяти нейтральных юрисдикциях. Сделано в Ереване командой из 7 человек и
+              одного кота. Оплата из 76 стран, включая Россию.
             </p>
           </div>
           <div>
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
         </div>
         <div className="foot-bot">
-          <span>© 2026 STRELKA VPN OÜ · TALLINN / YEREVAN</span>
+          <span>© 2026 STRELKAVPS OÜ · TALLINN / YEREVAN</span>
           <span>BUILD 7.1.44 · APR 23</span>
           <span>CANARY · 22 APR 2026 · OK</span>
         </div>
