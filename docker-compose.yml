@@ -1,0 +1,39 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: strelkavps-landing:latest
+    container_name: strelkavps-landing
+    restart: unless-stopped
+    ports:
+      # Наружу пробрасываем только если фронтим без реверс-прокси.
+      # За traefik/caddy уберите этот блок и подключите к общей docker-сети.
+      - "${HTTP_PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Хардининг: read-only ФС + временные tmpfs для nginx.
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+      - CHOWN
+      - SETUID
+      - SETGID
+      - DAC_OVERRIDE

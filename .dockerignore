@@ -1,0 +1,38 @@
+# Всё, что билду не нужно или может утечь.
+node_modules
+dist
+dist-ssr
+.git
+.gitignore
+.DS_Store
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env / секреты
+.env
+.env.*
+!.env.example
+
+# Netlify/CI — в образе не нужны
+netlify.toml
+.netlify
+
+# Docker meta (не копируем самих себя внутрь контекста)
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+.dockerignore
+
+# Документация (кроме README, который может пригодиться)
+*.md.bak
