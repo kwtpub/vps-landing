@@ -20,20 +20,6 @@ export function Footer() {
             <a href="#locs">Локации</a>
             <a href="#">Status-страница</a>
           </div>
-          <div>
-            <h4>Для разработчиков</h4>
-            <a href="#">CLI · Strelka</a>
-            <a href="#">Terraform</a>
-            <a href="#">OpenAPI 3.1</a>
-            <a href="#">Webhooks</a>
-          </div>
-          <div>
-            <h4>Компания</h4>
-            <a href="#privacy">Приватность</a>
-            <a href="#">Warrant canary</a>
-            <a href="#">AUP</a>
-            <a href="#">PGP · связь</a>
-          </div>
         </div>
 
         <div className="foot-legal">
